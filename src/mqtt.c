@@ -56,7 +56,8 @@ int main(int argc, char* argv[]) {
     char buf[BUFSIZ];
     for (;;) {
     	char* msg = fgets(buf, BUFSIZ-1, stdin);
-    	msg[BUFSIZ] = '\0';
+        buf[BUFSIZ] = '\0';
+        msg = buf;
         char last_ch = msg[strlen(msg)-1];
         while (last_ch == '\n' || last_ch == '\r') {
             msg[strlen(msg)-1] = '\0'; 
